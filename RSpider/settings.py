@@ -51,6 +51,7 @@ CONCURRENT_REQUESTS_PER_IP=16
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'RSpider.middlewares.RorareUserAgent.RotateUserAgentMiddleware': 543,  # 设置userAgent
+   'RSpider.middlewares.ProxyMiddleware.ProxyMiddleware': 110,
 }
 
 # Enable or disable extensions
@@ -113,7 +114,7 @@ ITEM_PIPELINES = {
 
 # 指定redis的地址和端口(可选，程序将使用默认的地址localhost:6379)
 REDIS_HOST = 'localhost'
-REDIS_PORT = 6378
+REDIS_PORT = 6379
 
 # 声明redis的url地址（可选）
 # 如果设置了这一项，则程序会有限采用此项设置，忽略REDIS_HOST 和 REDIS_PORT的设置
